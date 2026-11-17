@@ -117,10 +117,23 @@ function initInteractiveLoom() {
   const ctx = canvas.getContext('2d');
   const btnReset = document.getElementById('btn-reiniciar-telar');
   const counterEl = document.getElementById('thread-counter');
+  const toastEl = document.getElementById('loom-toast');
 
   const NODE_COUNT = 7;
   const UPEC_GREEN = '#0F5934';
   const UPEC_MUSTARD = '#F2C037';
+
+  // Frases temporales y caritas al tejer un hilo entre dos manos
+  const WEAVE_MESSAGES = [
+    { emoji: '😊', text: '¡Excelente! Cada hilo fortalece el buen trato en la oficina.' },
+    { emoji: '🤗', text: 'La empatía y el respeto nos unen como equipo.' },
+    { emoji: '💚', text: '¡Gracias por tejer salud mental y bienestar colectivo!' },
+    { emoji: '🌟', text: 'Un pequeño gesto amable transforma el ambiente laboral.' },
+    { emoji: '😄', text: 'Juntos construimos espacios libres de violencia psicológica.' },
+    { emoji: '🥳', text: '¡Hilo tejido! Tu compromiso suma a la cultura de paz.' },
+  ];
+  let toastTimeout = null;
+  let lastMessageIndex = -1;
 
   // Paleta de hilos vibrantes para el telar comunitario
   const THREAD_COLORS = [
@@ -281,15 +294,44 @@ function initInteractiveLoom() {
         color: getRandomThreadColor(),
       });
       selectedNodeIndex = null;
+      showWeaveMessage();
     }
 
     drawLoom();
   });
 
+  /**
+   * Muestra una frase motivacional temporal con una carita al tejer un hilo.
+   */
+  function showWeaveMessage() {
+    if (!toastEl) return;
+
+    let msgIndex;
+    do {
+      msgIndex = Math.floor(Math.random() * WEAVE_MESSAGES.length);
+    } while (msgIndex === lastMessageIndex && WEAVE_MESSAGES.length > 1);
+    lastMessageIndex = msgIndex;
+
+    const { emoji, text } = WEAVE_MESSAGES[msgIndex];
+    toastEl.innerHTML = `<span class="loom-toast-emoji" aria-hidden="true">${emoji}</span><span>${text}</span>`;
+
+    // Reinicia la animación y el temporizador si el usuario teje varios hilos seguidos
+    toastEl.hidden = true;
+    void toastEl.offsetWidth;
+    toastEl.hidden = false;
+
+    clearTimeout(toastTimeout);
+    toastTimeout = setTimeout(() => {
+      toastEl.hidden = true;
+    }, 3200);
+  }
+
   // Botón para reiniciar el telar
   btnReset.addEventListener('click', () => {
     connections = [];
     selectedNodeIndex = null;
+    clearTimeout(toastTimeout);
+    if (toastEl) toastEl.hidden = true;
     drawLoom();
   });
 
