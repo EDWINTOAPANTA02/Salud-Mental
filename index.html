@@ -10,19 +10,12 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap"
     rel="stylesheet"
   />
-  <link rel="stylesheet" href="style.css?v=6" />
+  <link rel="stylesheet" href="style.css?v=7" />
 </head>
 <body>
-  <!-- Marco exterior con logotipos institucionales grandes rodeando la cartelera -->
+  <!-- Marco exterior con los logos de Ponte 5 y Sostenibilidad alineados fuera del cuadro -->
   <div class="page-shell">
-    <aside class="outer-rail outer-rail-left" aria-label="Logotipos institucionales UPEC y Ponte Cinco">
-      <div class="outer-logo-card outer-logo-card-upec">
-        <img
-          src="img/upec.jpeg"
-          alt="Logotipo Universidad Politécnica Estatal del Carchi - UPEC"
-          class="outer-logo-img"
-        />
-      </div>
+    <aside class="outer-rail outer-rail-left" aria-label="Logotipo Ponte Cinco">
       <div class="outer-logo-card outer-logo-card-ponte5">
         <img
           src="img/ponte%205.jpeg"
@@ -35,264 +28,264 @@
     <!-- Marco principal tipo cartelera institucional -->
     <div class="board-wrapper">
       <header class="board-header">
-        <div class="header-titles">
-          <p class="area-title">Dirección de Planificación y Gestión Estratégica</p>
-          <h1>El Telar del Buen Trato: <span>Tejiendo Salud Mental</span></h1>
-          <p class="subtitle">
-            Sigue estos 4 pasos en tu pantalla para interactuar con nuestro cartel físico
-          </p>
+        <div class="header-top-row">
+          <div class="header-upec-logo">
+            <img
+              src="img/upec.jpeg"
+              alt="Logotipo Universidad Politécnica Estatal del Carchi - UPEC"
+              class="upec-logo-img"
+            />
+          </div>
+          <div class="header-titles">
+            <p class="area-title">Dirección de Planificación y Gestión Estratégica</p>
+            <h1>El Telar del Buen Trato: <span>Tejiendo Salud Mental</span></h1>
+            <p class="subtitle">
+              Sigue estos 4 pasos en tu pantalla para interactuar con nuestro cartel físico
+            </p>
+          </div>
         </div>
       </header>
 
-    <!-- Barra de progreso / Navegación por pasos (sin scroll) -->
-    <nav class="stepper-nav" aria-label="Pasos para interactuar con el cartel">
-      <button type="button" class="step-pill is-active" data-step="1">
-        <span class="step-num">1</span>
-        <span class="step-label">Identifica</span>
-      </button>
-      <button type="button" class="step-pill" data-step="2">
-        <span class="step-num">2</span>
-        <span class="step-label">Transforma</span>
-      </button>
-      <button type="button" class="step-pill" data-step="3">
-        <span class="step-num">3</span>
-        <span class="step-label">Actúa</span>
-      </button>
-      <button type="button" class="step-pill" data-step="4">
-        <span class="step-num">4</span>
-        <span class="step-label">El Telar</span>
-      </button>
-    </nav>
+      <!-- Barra de progreso visual (no interactiva: avance obligatorio paso a paso) -->
+      <div class="stepper-nav" aria-label="Progreso de los 4 pasos">
+        <div class="step-pill is-active" data-step="1" aria-current="step">
+          <span class="step-num">1</span>
+          <span class="step-label">Identifica</span>
+        </div>
+        <div class="step-pill" data-step="2">
+          <span class="step-num">2</span>
+          <span class="step-label">Transforma</span>
+        </div>
+        <div class="step-pill" data-step="3">
+          <span class="step-num">3</span>
+          <span class="step-label">Actúa</span>
+        </div>
+        <div class="step-pill" data-step="4">
+          <span class="step-num">4</span>
+          <span class="step-label">El Telar</span>
+        </div>
+      </div>
 
-    <!-- Contenedor de pasos (solo 1 paso visible a la vez para evitar scroll) -->
-    <main class="wizard-container">
-      <!-- PASO 1: IDENTIFICA -->
-      <section class="step-panel is-active" data-step="1" aria-labelledby="titulo-identifica">
-        <div class="step-layout">
-          <div class="step-guide">
-            <span class="module-step">Paso 1 de 4 · En el cartel físico</span>
-            <h2 id="titulo-identifica">Identifica los Focos de Alerta</h2>
-            <div class="cartel-action-card">
-              <strong>📌 ¿Qué hacer ahora en el cartel?</strong>
-              <p>
-                Acércate a la parte izquierda del cartel físico y abre las
-                <strong>3 carpetas manila</strong> colgadas en el tablero para descubrir qué
-                conductas de violencia psicológica solemos normalizar.
+      <!-- Contenedor de pasos (solo 1 paso visible a la vez para evitar scroll) -->
+      <main class="wizard-container">
+        <!-- PASO 1: IDENTIFICA -->
+        <section class="step-panel is-active" data-step="1" aria-labelledby="titulo-identifica">
+          <div class="step-layout">
+            <div class="step-guide">
+              <h2 id="titulo-identifica">Identifica los Focos de Alerta</h2>
+              <div class="cartel-action-card">
+                <strong>📌 ¿Qué hacer ahora en el cartel?</strong>
+                <p>
+                  Acércate a la parte izquierda del cartel físico y abre las
+                  <strong>3 carpetas manila</strong> colgadas en el tablero para descubrir qué
+                  conductas de violencia psicológica solemos normalizar.
+                </p>
+              </div>
+              <p class="concept-prompt">
+                Conoce el significado de <strong>Desvalorización</strong>, <strong>Ley del Hielo</strong> y <strong>Gaslighting</strong>:
               </p>
             </div>
-            <p class="concept-prompt">
-              Conoce el significado de <strong>Desvalorización</strong>, <strong>Ley del Hielo</strong> y <strong>Gaslighting</strong>:
-            </p>
-          </div>
 
-          <div class="step-interactive">
-            <div class="folders-container">
-              <!-- Carpeta 1: Desvalorización -->
-              <div class="manila-folder">
-                <button
-                  type="button"
-                  class="folder-tab"
-                  aria-expanded="false"
-                  aria-controls="contenido-desvalorizacion"
-                >
-                  <span class="folder-icon" aria-hidden="true">📁</span>
-                  <span class="folder-title">Desvalorización</span>
-                  <span class="folder-chevron" aria-hidden="true">▾</span>
-                </button>
-                <div class="folder-content" id="contenido-desvalorizacion" hidden>
-                  <p>
-                    Minimización de logros y críticas destructivas. Frases como
-                    <em>"No sirves para nada"</em>.
-                  </p>
+            <div class="step-interactive">
+              <div class="folders-container">
+                <!-- Carpeta 1: Desvalorización -->
+                <div class="manila-folder">
+                  <button
+                    type="button"
+                    class="folder-tab"
+                    aria-expanded="false"
+                    aria-controls="contenido-desvalorizacion"
+                  >
+                    <span class="folder-icon" aria-hidden="true">📁</span>
+                    <span class="folder-title">Desvalorización</span>
+                    <span class="folder-chevron" aria-hidden="true">▾</span>
+                  </button>
+                  <div class="folder-content" id="contenido-desvalorizacion" hidden>
+                    <p>
+                      Minimización de logros y críticas destructivas. Frases como
+                      <em>"No sirves para nada"</em>.
+                    </p>
+                  </div>
                 </div>
-              </div>
 
-              <!-- Carpeta 2: Ley del Hielo -->
-              <div class="manila-folder">
-                <button
-                  type="button"
-                  class="folder-tab"
-                  aria-expanded="false"
-                  aria-controls="contenido-ley-hielo"
-                >
-                  <span class="folder-icon" aria-hidden="true">📁</span>
-                  <span class="folder-title">Ley del Hielo</span>
-                  <span class="folder-chevron" aria-hidden="true">▾</span>
-                </button>
-                <div class="folder-content" id="contenido-ley-hielo" hidden>
-                  <p>Uso del silencio punitivo y aislamiento manipulador.</p>
+                <!-- Carpeta 2: Ley del Hielo -->
+                <div class="manila-folder">
+                  <button
+                    type="button"
+                    class="folder-tab"
+                    aria-expanded="false"
+                    aria-controls="contenido-ley-hielo"
+                  >
+                    <span class="folder-icon" aria-hidden="true">📁</span>
+                    <span class="folder-title">Ley del Hielo</span>
+                    <span class="folder-chevron" aria-hidden="true">▾</span>
+                  </button>
+                  <div class="folder-content" id="contenido-ley-hielo" hidden>
+                    <p>Uso del silencio punitivo y aislamiento manipulador.</p>
+                  </div>
                 </div>
-              </div>
 
-              <!-- Carpeta 3: Gaslighting -->
-              <div class="manila-folder">
-                <button
-                  type="button"
-                  class="folder-tab"
-                  aria-expanded="false"
-                  aria-controls="contenido-gaslighting"
-                >
-                  <span class="folder-icon" aria-hidden="true">📁</span>
-                  <span class="folder-title">Gaslighting</span>
-                  <span class="folder-chevron" aria-hidden="true">▾</span>
-                </button>
-                <div class="folder-content" id="contenido-gaslighting" hidden>
-                  <p>
-                    Invalidación emocional encaminada a distorsionar la percepción de la realidad.
-                  </p>
+                <!-- Carpeta 3: Gaslighting -->
+                <div class="manila-folder">
+                  <button
+                    type="button"
+                    class="folder-tab"
+                    aria-expanded="false"
+                    aria-controls="contenido-gaslighting"
+                  >
+                    <span class="folder-icon" aria-hidden="true">📁</span>
+                    <span class="folder-title">Gaslighting</span>
+                    <span class="folder-chevron" aria-hidden="true">▾</span>
+                  </button>
+                  <div class="folder-content" id="contenido-gaslighting" hidden>
+                    <p>
+                      Invalidación emocional encaminada a distorsionar la percepción de la realidad.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="step-footer">
-          <span></span>
-          <button type="button" class="btn btn-primary btn-next" data-next="2">
-            Completé el Paso 1 en el cartel · Ir al Paso 2 →
-          </button>
-        </div>
-      </section>
-
-      <!-- PASO 2: TRANSFORMA -->
-      <section class="step-panel" data-step="2" aria-labelledby="titulo-transforma" hidden>
-        <div class="step-layout">
-          <div class="step-guide">
-            <span class="module-step">Paso 2 de 4 · En el cartel físico</span>
-            <h2 id="titulo-transforma">Transforma: El Espejo</h2>
-            <div class="cartel-action-card">
-              <strong>📌 ¿Qué hacer ahora en el cartel?</strong>
-              <p>
-                Dirígete al centro del cartel físico y párate frente al <strong>espejo reciclado</strong>.
-                Mírate unos segundos y reflexiona sobre su lema:
-                <em>"La empatía empieza por ti. ¿Qué vas a tejer hoy?"</em>
-              </p>
-            </div>
-            <p class="concept-prompt">
-              También puedes activar el espejo digital para verte desde tu pantalla antes de pasar al siguiente módulo.
-            </p>
-          </div>
-
-          <div class="step-interactive">
-            <div class="mirror-wrapper">
-              <div class="mirror-circle" id="mirror-circle">
-                <video id="mirror-video" autoplay playsinline muted></video>
-                <div class="mirror-placeholder" id="mirror-placeholder">
-                  <span class="mirror-icon" aria-hidden="true">🪞</span>
-                  <p>Tu reflejo aparecerá aquí</p>
-                </div>
-              </div>
-              <button type="button" class="btn btn-primary" id="btn-activar-espejo">
-                Activar Espejo
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="step-footer">
-          <button type="button" class="btn btn-outline btn-prev" data-prev="1">
-            ← Paso 1
-          </button>
-          <button type="button" class="btn btn-primary btn-next" data-next="3">
-            Ya pasé por el espejo · Ir al Paso 3 →
-          </button>
-        </div>
-      </section>
-
-      <!-- PASO 3: ACTÚA -->
-      <section class="step-panel" data-step="3" aria-labelledby="titulo-actua" hidden>
-        <div class="step-layout">
-          <div class="step-guide">
-            <span class="module-step">Paso 3 de 4 · En el cartel físico</span>
-            <h2 id="titulo-actua">Actúa: Kit de Primeros Auxilios</h2>
-            <div class="cartel-action-card">
-              <strong>📌 ¿Qué hacer ahora en el cartel?</strong>
-              <p>
-                Ve al compartimento del <strong>Kit de Primeros Auxilios Emocionales</strong> en el cartel
-                físico y saca una tarjeta práctica de comunicación asertiva para aplicarla en tu día a día.
-              </p>
-            </div>
-            <p class="concept-prompt">
-              Descubre las herramientas disponibles extrayendo una estrategia de ejemplo:
-            </p>
-          </div>
-
-          <div class="step-interactive">
-            <div class="kit-wrapper">
-              <div class="kit-box">
-                <div class="kit-cross" aria-hidden="true">✚</div>
-                <span class="kit-label">Kit de Primeros Auxilios</span>
-                <div class="strategy-slot" id="strategy-slot" aria-live="polite">
-                  <p class="strategy-placeholder">
-                    Presiona el botón para extraer una tarjeta de estrategia.
-                  </p>
-                </div>
-              </div>
-              <button type="button" class="btn btn-accent" id="btn-extraer-estrategia">
-                Extraer Estrategia
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="step-footer">
-          <button type="button" class="btn btn-outline btn-prev" data-prev="2">
-            ← Paso 2
-          </button>
-          <button type="button" class="btn btn-primary btn-next" data-next="4">
-            Ya tengo mi estrategia · Ir al Paso 4 →
-          </button>
-        </div>
-      </section>
-
-      <!-- PASO 4: EL TELAR INTERACTIVO -->
-      <section class="step-panel" data-step="4" aria-labelledby="titulo-telar" hidden>
-        <div class="loom-top-row">
-          <div>
-            <span class="module-step">Paso 4 de 4 · En la base del cartel físico</span>
-            <h2 id="titulo-telar">Teje tu Compromiso en El Telar</h2>
-          </div>
-          <div class="loom-actions">
-            <span class="thread-counter" id="thread-counter">Hilos tejidos: 0</span>
-            <button type="button" class="btn btn-outline btn-sm" id="btn-reiniciar-telar">
-              Reiniciar Telar
+          <div class="step-footer">
+            <span></span>
+            <button type="button" class="btn btn-primary btn-next" data-next="2">
+              Completé el Paso 1 en el cartel · Ir al Paso 2 →
             </button>
           </div>
-        </div>
+        </section>
 
-        <div class="cartel-action-card cartel-action-compact">
-          <strong>📌 ¿Qué hacer ahora en el cartel?</strong>
-          <p>
-            En la base del cartel físico verás las <strong>siluetas de las manos</strong> de nuestro equipo.
-            Toma un hilo de color, átalo a una mano y entrelázalo con otra o hacia una estrategia del Paso 3.
-            ¡También puedes tejer tu hilo aquí abajo haciendo clic en dos manos (✋)!
-          </p>
-        </div>
+        <!-- PASO 2: TRANSFORMA -->
+        <section class="step-panel" data-step="2" aria-labelledby="titulo-transforma" hidden>
+          <div class="step-layout">
+            <div class="step-guide">
+              <h2 id="titulo-transforma">Transforma: El Espejo</h2>
+              <div class="cartel-action-card">
+                <strong>📌 ¿Qué hacer ahora en el cartel?</strong>
+                <p>
+                  Dirígete al centro del cartel físico y párate frente al <strong>espejo reciclado</strong>.
+                  Mírate unos segundos y reflexiona sobre su lema:
+                  <em>"La empatía empieza por ti. ¿Qué vas a tejer hoy?"</em>
+                </p>
+              </div>
+              <p class="concept-prompt">
+                También puedes activar el espejo digital para verte desde tu pantalla antes de pasar al siguiente módulo.
+              </p>
+            </div>
 
-        <div class="canvas-container">
-          <div class="loom-toast" id="loom-toast" aria-live="polite" hidden></div>
-          <canvas
-            id="telar-canvas"
-            aria-label="Lienzo interactivo con 7 nodos de manos para conectar hilos de colores"
-          ></canvas>
-        </div>
+            <div class="step-interactive">
+              <div class="mirror-wrapper">
+                <div class="mirror-circle" id="mirror-circle">
+                  <video id="mirror-video" autoplay playsinline muted></video>
+                  <div class="mirror-placeholder" id="mirror-placeholder">
+                    <span class="mirror-icon" aria-hidden="true">🪞</span>
+                    <p>Tu reflejo aparecerá aquí</p>
+                  </div>
+                </div>
+                <button type="button" class="btn btn-primary" id="btn-activar-espejo">
+                  Activar Espejo
+                </button>
+              </div>
+            </div>
+          </div>
 
-        <div class="step-footer">
-          <button type="button" class="btn btn-outline btn-prev" data-prev="3">
-            ← Paso 3
-          </button>
-          <button type="button" class="btn btn-accent btn-next" data-next="1">
-            🔄 Volver al Paso 1
-          </button>
-        </div>
-      </section>
-    </main>
+          <div class="step-footer">
+            <span></span>
+            <button type="button" class="btn btn-primary btn-next" data-next="3">
+              Ya pasé por el espejo · Ir al Paso 3 →
+            </button>
+          </div>
+        </section>
 
-    <footer class="board-footer">
-      <p>
-        <strong>Dirección de Planificación y Gestión Estratégica</strong> · UPEC · Concurso "Ponte 5 en tu Oficina" (18 – 26 de noviembre de 2026)
-      </p>
-    </footer>
+        <!-- PASO 3: ACTÚA -->
+        <section class="step-panel" data-step="3" aria-labelledby="titulo-actua" hidden>
+          <div class="step-layout">
+            <div class="step-guide">
+              <h2 id="titulo-actua">Actúa: Kit de Primeros Auxilios</h2>
+              <div class="cartel-action-card">
+                <strong>📌 ¿Qué hacer ahora en el cartel?</strong>
+                <p>
+                  Ve al compartimento del <strong>Kit de Primeros Auxilios Emocionales</strong> en el cartel
+                  físico y saca una tarjeta práctica de comunicación asertiva para aplicarla en tu día a día.
+                </p>
+              </div>
+              <p class="concept-prompt">
+                Descubre las herramientas disponibles extrayendo una estrategia de ejemplo:
+              </p>
+            </div>
+
+            <div class="step-interactive">
+              <div class="kit-wrapper">
+                <div class="kit-box">
+                  <div class="kit-cross" aria-hidden="true">✚</div>
+                  <span class="kit-label">Kit de Primeros Auxilios</span>
+                  <div class="strategy-slot" id="strategy-slot" aria-live="polite">
+                    <p class="strategy-placeholder">
+                      Presiona el botón para extraer una tarjeta de estrategia.
+                    </p>
+                  </div>
+                </div>
+                <button type="button" class="btn btn-accent" id="btn-extraer-estrategia">
+                  Extraer Estrategia
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="step-footer">
+            <span></span>
+            <button type="button" class="btn btn-primary btn-next" data-next="4">
+              Ya tengo mi estrategia · Ir al Paso 4 →
+            </button>
+          </div>
+        </section>
+
+        <!-- PASO 4: EL TELAR INTERACTIVO -->
+        <section class="step-panel" data-step="4" aria-labelledby="titulo-telar" hidden>
+          <div class="loom-top-row">
+            <div>
+              <h2 id="titulo-telar">Teje tu Compromiso en El Telar</h2>
+            </div>
+            <div class="loom-actions">
+              <span class="thread-counter" id="thread-counter">Hilos tejidos: 0</span>
+              <button type="button" class="btn btn-outline btn-sm" id="btn-reiniciar-telar">
+                Reiniciar Telar
+              </button>
+            </div>
+          </div>
+
+          <div class="cartel-action-card cartel-action-compact">
+            <strong>📌 ¿Qué hacer ahora en el cartel?</strong>
+            <p>
+              En la base del cartel físico verás las <strong>siluetas de las manos</strong> de nuestro equipo:
+              toma un hilo de color, átalo a una mano y entrelázalo con otra. Además,
+              <strong>coge un papel de color y pégalo en el cartel de Ponte 5</strong> (en blanco y negro)
+              para darle color entre todos. ¡También puedes tejer tu hilo aquí abajo haciendo clic en dos manos (✋)!
+            </p>
+          </div>
+
+          <div class="canvas-container">
+            <div class="loom-toast" id="loom-toast" aria-live="polite" hidden></div>
+            <canvas
+              id="telar-canvas"
+              aria-label="Lienzo interactivo con 7 nodos de manos para conectar hilos de colores"
+            ></canvas>
+          </div>
+
+          <div class="step-footer">
+            <span></span>
+            <button type="button" class="btn btn-accent" id="btn-finalizar">
+              ✅ Finalizar
+            </button>
+          </div>
+        </section>
+      </main>
+
+      <footer class="board-footer">
+        <p>
+          <strong>Dirección de Planificación y Gestión Estratégica</strong> · UPEC · Concurso "Ponte 5 en tu Oficina" (18 – 26 de noviembre de 2026)
+        </p>
+      </footer>
     </div>
 
     <aside class="outer-rail outer-rail-right" aria-label="Logotipo UPEC Sostenibles de verdad">
@@ -306,6 +299,6 @@
     </aside>
   </div>
 
-  <script src="script.js?v=5"></script>
+  <script src="script.js?v=7"></script>
 </body>
 </html>

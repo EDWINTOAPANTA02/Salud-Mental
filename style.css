@@ -56,13 +56,13 @@ body {
   justify-content: center;
 }
 
-/* Marco exterior con logotipos grandes rodeando la cartelera */
+/* Marco exterior con logos de Ponte 5 y Sostenibilidad alineados fuera del cuadro */
 .page-shell {
   width: 100%;
   max-width: 1500px;
   display: grid;
-  grid-template-columns: 245px minmax(0, 1fr) 200px;
-  align-items: stretch;
+  grid-template-columns: 230px minmax(0, 1fr) 215px;
+  align-items: center;
   gap: 1.25rem;
 }
 
@@ -71,14 +71,6 @@ body {
   flex-direction: column;
   gap: 1.15rem;
   align-items: center;
-}
-
-.outer-rail-left {
-  justify-content: flex-start;
-  padding-top: 0.15rem;
-}
-
-.outer-rail-right {
   justify-content: center;
 }
 
@@ -95,9 +87,7 @@ body {
 }
 
 .outer-logo-card-ponte5 {
-  padding: 0.45rem;
-  margin-top: auto;
-  margin-bottom: auto;
+  padding: 0.5rem;
 }
 
 .outer-logo-card-ponte5 .outer-logo-img {
@@ -105,13 +95,17 @@ body {
 }
 
 .outer-logo-card-tall {
-  padding: 0.95rem 0.75rem;
+  padding: 0.85rem 0.65rem;
+}
+
+.outer-logo-card-tall .outer-logo-img {
+  max-height: 360px;
 }
 
 .outer-logo-img {
   width: 100%;
   height: auto;
-  max-height: 280px;
+  max-height: 340px;
   object-fit: contain;
   display: block;
 }
@@ -123,24 +117,51 @@ body {
   border: 3px solid var(--upec-green);
   border-radius: 20px;
   box-shadow: var(--shadow-board);
-  padding: 1.25rem 1.65rem 1.1rem;
+  padding: 1.2rem 1.6rem 1.05rem;
 }
 
 /* ==========================================================================
-   Encabezado Institucional y Área Responsable
+   Encabezado Institucional (Logo UPEC arriba a la izquierda + Títulos)
    ========================================================================== */
 .board-header {
-  text-align: center;
   padding-bottom: 0.85rem;
   margin-bottom: 0.95rem;
   border-bottom: 2px dashed var(--border-subtle);
 }
 
+.header-top-row {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.header-upec-logo {
+  flex-shrink: 0;
+  background-color: #FFFFFF;
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 0.3rem 0.5rem;
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.upec-logo-img {
+  height: 100%;
+  width: auto;
+  max-width: 210px;
+  object-fit: contain;
+  display: block;
+}
+
 .header-titles {
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.3rem;
+  text-align: center;
+  gap: 0.28rem;
 }
 
 /* Título visible del área responsable */
@@ -199,13 +220,10 @@ body {
   font-size: 0.88rem;
   font-weight: 600;
   color: var(--text-muted);
-  cursor: pointer;
+  cursor: default;
+  user-select: none;
+  pointer-events: none;
   transition: all 0.2s ease;
-}
-
-.step-pill:hover {
-  border-color: var(--upec-green);
-  color: var(--upec-green-dark);
 }
 
 .step-pill.is-active {
@@ -753,6 +771,15 @@ body {
 }
 
 @media (max-width: 820px) {
+  .header-top-row {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .header-upec-logo {
+    height: 62px;
+  }
+
   .step-layout {
     grid-template-columns: 1fr;
     gap: 1rem;

@@ -12,13 +12,13 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ==========================================================================
-   Navegación por Pasos (Wizard sin scroll)
+   Navegación por Pasos (Avance obligatorio paso a paso, sin scroll)
    ========================================================================== */
 function initStepWizard() {
   const pills = document.querySelectorAll('.step-pill');
   const panels = document.querySelectorAll('.step-panel');
   const nextButtons = document.querySelectorAll('.btn-next');
-  const prevButtons = document.querySelectorAll('.btn-prev');
+  const btnFinish = document.getElementById('btn-finalizar');
 
   function goToStep(stepNumber) {
     const targetStep = String(stepNumber);
@@ -32,9 +32,13 @@ function initStepWizard() {
     pills.forEach((pill) => {
       const pillStep = Number(pill.dataset.step);
       const current = Number(targetStep);
-      pill.classList.toggle('is-active', pillStep === current);
-      if (pillStep < current) {
-        pill.classList.add('is-completed');
+      const isCurrent = pillStep === current;
+      pill.classList.toggle('is-active', isCurrent);
+      pill.classList.toggle('is-completed', pillStep < current);
+      if (isCurrent) {
+        pill.setAttribute('aria-current', 'step');
+      } else {
+        pill.removeAttribute('aria-current');
       }
     });
 
@@ -46,17 +50,15 @@ function initStepWizard() {
     }
   }
 
-  pills.forEach((pill) => {
-    pill.addEventListener('click', () => goToStep(pill.dataset.step));
-  });
-
   nextButtons.forEach((btn) => {
     btn.addEventListener('click', () => goToStep(btn.dataset.next));
   });
 
-  prevButtons.forEach((btn) => {
-    btn.addEventListener('click', () => goToStep(btn.dataset.prev));
-  });
+  if (btnFinish) {
+    btnFinish.addEventListener('click', () => {
+      goToStep(1);
+    });
+  }
 }
 
 /* ==========================================================================
