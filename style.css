@@ -59,10 +59,10 @@ body {
 /* Marco exterior con logotipos grandes rodeando la cartelera */
 .page-shell {
   width: 100%;
-  max-width: 1460px;
+  max-width: 1500px;
   display: grid;
-  grid-template-columns: 205px minmax(0, 1fr) 190px;
-  align-items: center;
+  grid-template-columns: 245px minmax(0, 1fr) 200px;
+  align-items: stretch;
   gap: 1.25rem;
 }
 
@@ -73,16 +73,35 @@ body {
   align-items: center;
 }
 
+.outer-rail-left {
+  justify-content: flex-start;
+  padding-top: 0.15rem;
+}
+
+.outer-rail-right {
+  justify-content: center;
+}
+
 .outer-logo-card {
   width: 100%;
   background-color: #FFFFFF;
   border: 2px solid var(--border-subtle);
   border-radius: 16px;
-  padding: 0.85rem;
+  padding: 0.75rem;
   box-shadow: 0 8px 20px rgba(15, 89, 52, 0.08);
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.outer-logo-card-ponte5 {
+  padding: 0.45rem;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.outer-logo-card-ponte5 .outer-logo-img {
+  max-height: 360px;
 }
 
 .outer-logo-card-tall {
