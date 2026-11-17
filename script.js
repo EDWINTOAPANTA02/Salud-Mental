@@ -4,11 +4,60 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initStepWizard();
   initManilaFolders();
   initMirrorModule();
   initFirstAidKit();
   initInteractiveLoom();
 });
+
+/* ==========================================================================
+   Navegación por Pasos (Wizard sin scroll)
+   ========================================================================== */
+function initStepWizard() {
+  const pills = document.querySelectorAll('.step-pill');
+  const panels = document.querySelectorAll('.step-panel');
+  const nextButtons = document.querySelectorAll('.btn-next');
+  const prevButtons = document.querySelectorAll('.btn-prev');
+
+  function goToStep(stepNumber) {
+    const targetStep = String(stepNumber);
+
+    panels.forEach((panel) => {
+      const isTarget = panel.dataset.step === targetStep;
+      panel.hidden = !isTarget;
+      panel.classList.toggle('is-active', isTarget);
+    });
+
+    pills.forEach((pill) => {
+      const pillStep = Number(pill.dataset.step);
+      const current = Number(targetStep);
+      pill.classList.toggle('is-active', pillStep === current);
+      if (pillStep < current) {
+        pill.classList.add('is-completed');
+      }
+    });
+
+    // Si entramos al Paso 4 (El Telar), recalcular tamaño del canvas recién visible
+    if (targetStep === '4') {
+      requestAnimationFrame(() => {
+        window.dispatchEvent(new Event('resize'));
+      });
+    }
+  }
+
+  pills.forEach((pill) => {
+    pill.addEventListener('click', () => goToStep(pill.dataset.step));
+  });
+
+  nextButtons.forEach((btn) => {
+    btn.addEventListener('click', () => goToStep(btn.dataset.next));
+  });
+
+  prevButtons.forEach((btn) => {
+    btn.addEventListener('click', () => goToStep(btn.dataset.prev));
+  });
+}
 
 /* ==========================================================================
    Módulo 1: "Identifica" (Carpetas Manila desplegables)
