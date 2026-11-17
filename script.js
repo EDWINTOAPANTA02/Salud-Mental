@@ -316,12 +316,14 @@ function initInteractiveLoom() {
     toastEl.innerHTML = `<span class="loom-toast-emoji" aria-hidden="true">${emoji}</span><span>${text}</span>`;
 
     // Reinicia la animación y el temporizador si el usuario teje varios hilos seguidos
-    toastEl.hidden = true;
-    void toastEl.offsetWidth;
     toastEl.hidden = false;
+    toastEl.classList.remove('is-visible');
+    void toastEl.offsetWidth;
+    toastEl.classList.add('is-visible');
 
     clearTimeout(toastTimeout);
     toastTimeout = setTimeout(() => {
+      toastEl.classList.remove('is-visible');
       toastEl.hidden = true;
     }, 3200);
   }
@@ -331,7 +333,10 @@ function initInteractiveLoom() {
     connections = [];
     selectedNodeIndex = null;
     clearTimeout(toastTimeout);
-    if (toastEl) toastEl.hidden = true;
+    if (toastEl) {
+      toastEl.classList.remove('is-visible');
+      toastEl.hidden = true;
+    }
     drawLoom();
   });
 
