@@ -56,12 +56,12 @@ body {
   justify-content: center;
 }
 
-/* Marco exterior con logos de Ponte 5 y Sostenibilidad alineados fuera del cuadro */
+/* Marco exterior con logos de Sostenibilidad (izq.) y Ponte 5 (der.) alineados fuera del cuadro */
 .page-shell {
   width: 100%;
-  max-width: 1500px;
+  max-width: 1520px;
   display: grid;
-  grid-template-columns: 230px minmax(0, 1fr) 215px;
+  grid-template-columns: 205px minmax(0, 1fr) 260px;
   align-items: center;
   gap: 1.25rem;
 }
@@ -87,11 +87,11 @@ body {
 }
 
 .outer-logo-card-ponte5 {
-  padding: 0.5rem;
+  padding: 0.35rem;
 }
 
 .outer-logo-card-ponte5 .outer-logo-img {
-  max-height: 360px;
+  max-height: 410px;
 }
 
 .outer-logo-card-tall {
