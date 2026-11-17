@@ -10,47 +10,39 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap"
     rel="stylesheet"
   />
-  <link rel="stylesheet" href="style.css?v=4" />
+  <link rel="stylesheet" href="style.css?v=5" />
 </head>
 <body>
-  <!-- Marco principal tipo cartelera institucional -->
-  <div class="board-wrapper">
-    <header class="board-header">
-      <!-- Barra superior con los 3 logotipos institucionales -->
-      <div class="logos-bar">
-        <div class="logo-box logo-box-wide">
-          <img
-            src="img/WhatsApp%20Image%202026-11-17%20at%208.20.02%20AM.jpeg"
-            alt="Logotipo Universidad Politécnica Estatal del Carchi - UPEC"
-            class="logo-img"
-          />
-        </div>
-
-        <div class="logo-box logo-box-ponte5">
-          <img
-            src="img/ponte%205.jpeg"
-            alt="Logotipo Ponte Cinco - Igualdad de Género"
-            class="logo-img"
-          />
-        </div>
-
-        <div class="logo-box logo-box-tall">
-          <img
-            src="img/WhatsApp%20Image%202026-11-17%20at%208.20.01%20AM.jpeg"
-            alt="Sostenibles de verdad - #1 en el Ecuador - UI GreenMetric"
-            class="logo-img"
-          />
-        </div>
+  <!-- Marco exterior con logotipos institucionales grandes rodeando la cartelera -->
+  <div class="page-shell">
+    <aside class="outer-rail outer-rail-left" aria-label="Logotipos institucionales UPEC y Ponte Cinco">
+      <div class="outer-logo-card">
+        <img
+          src="img/WhatsApp%20Image%202026-11-17%20at%208.20.02%20AM.jpeg"
+          alt="Logotipo Universidad Politécnica Estatal del Carchi - UPEC"
+          class="outer-logo-img"
+        />
       </div>
-
-      <div class="header-titles">
-        <p class="area-title">Dirección de Planificación y Gestión Estratégica</p>
-        <h1>El Telar del Buen Trato: <span>Tejiendo Salud Mental</span></h1>
-        <p class="subtitle">
-          Sigue estos 4 pasos en tu pantalla para interactuar con nuestro cartel físico
-        </p>
+      <div class="outer-logo-card">
+        <img
+          src="img/ponte%205.jpeg"
+          alt="Logotipo Ponte Cinco - Igualdad de Género"
+          class="outer-logo-img"
+        />
       </div>
-    </header>
+    </aside>
+
+    <!-- Marco principal tipo cartelera institucional -->
+    <div class="board-wrapper">
+      <header class="board-header">
+        <div class="header-titles">
+          <p class="area-title">Dirección de Planificación y Gestión Estratégica</p>
+          <h1>El Telar del Buen Trato: <span>Tejiendo Salud Mental</span></h1>
+          <p class="subtitle">
+            Sigue estos 4 pasos en tu pantalla para interactuar con nuestro cartel físico
+          </p>
+        </div>
+      </header>
 
     <!-- Barra de progreso / Navegación por pasos (sin scroll) -->
     <nav class="stepper-nav" aria-label="Pasos para interactuar con el cartel">
@@ -301,8 +293,19 @@
         <strong>Dirección de Planificación y Gestión Estratégica</strong> · UPEC · Concurso "Ponte 5 en tu Oficina" (18 – 26 de noviembre de 2026)
       </p>
     </footer>
+    </div>
+
+    <aside class="outer-rail outer-rail-right" aria-label="Logotipo UPEC Sostenibles de verdad">
+      <div class="outer-logo-card outer-logo-card-tall">
+        <img
+          src="img/WhatsApp%20Image%202026-11-17%20at%208.20.01%20AM.jpeg"
+          alt="Sostenibles de verdad - #1 en el Ecuador - UI GreenMetric"
+          class="outer-logo-img"
+        />
+      </div>
+    </aside>
   </div>
 
-  <script src="script.js?v=4"></script>
+  <script src="script.js?v=5"></script>
 </body>
 </html>
