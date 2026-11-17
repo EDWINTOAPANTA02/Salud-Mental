@@ -4,12 +4,44 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initFullscreenToggle();
   initStepWizard();
   initManilaFolders();
   initMirrorModule();
   initFirstAidKit();
   initInteractiveLoom();
 });
+
+/* ==========================================================================
+   Modo Pantalla Completa (oculta pestañas y barra del navegador)
+   ========================================================================== */
+function initFullscreenToggle() {
+  const btnFullscreen = document.getElementById('btn-fullscreen');
+  if (!btnFullscreen) return;
+
+  function updateButtonLabel() {
+    const isFull = Boolean(document.fullscreenElement);
+    btnFullscreen.textContent = isFull ? '✕ Salir de Pantalla Completa' : '⛶ Pantalla Completa';
+  }
+
+  btnFullscreen.addEventListener('click', async () => {
+    try {
+      if (!document.fullscreenElement) {
+        await document.documentElement.requestFullscreen();
+      } else {
+        await document.exitFullscreen();
+      }
+    } catch (error) {
+      console.error('No se pudo cambiar a pantalla completa:', error);
+      alert('Tu navegador bloqueó el modo pantalla completa. También puedes activarlo presionando la tecla F11.');
+    }
+  });
+
+  document.addEventListener('fullscreenchange', () => {
+    updateButtonLabel();
+    window.dispatchEvent(new Event('resize'));
+  });
+}
 
 /* ==========================================================================
    Navegación por Pasos (Avance obligatorio paso a paso, sin scroll)

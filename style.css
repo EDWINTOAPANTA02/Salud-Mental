@@ -161,7 +161,13 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 0.28rem;
+  gap: 0.25rem;
+}
+
+.btn-fullscreen {
+  flex-shrink: 0;
+  align-self: flex-start;
+  white-space: nowrap;
 }
 
 /* Título visible del área responsable */
@@ -778,6 +784,10 @@ body {
 
   .header-upec-logo {
     height: 62px;
+  }
+
+  .btn-fullscreen {
+    align-self: center;
   }
 
   .step-layout {
